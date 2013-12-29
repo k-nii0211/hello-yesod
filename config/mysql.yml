@@ -1,0 +1,24 @@
+Default: &defaults
+  user: root
+  password: ""
+  host: localhost
+  port: 3306
+  database: hello_yesod
+  poolsize: 10
+
+Development:
+  <<: *defaults
+
+Testing:
+  database: hello_yesod
+  <<: *defaults
+
+Staging:
+  database: hello_yesod_staging
+  poolsize: 100
+  <<: *defaults
+
+Production:
+  database: hello_yesod_production
+  poolsize: 100
+  <<: *defaults
